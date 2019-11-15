@@ -1,8 +1,0 @@
-//Domains beyond Amazon.com
-
-I would pull from goodreads and add book reviews. Might be kind of cool to provide a movie trailer if the book had a movie. Find mentions on Twitter related to the book. Just ideas. 
-
-//Products beyond just simply books.
-
-First, I need to find out how to get the book description. That one... and then, I would consider adding movies and music to the program. 
-

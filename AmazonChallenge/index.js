@@ -27,14 +27,12 @@ const getBookDetails = async links => {
       ).text();
 
       // Description //not working :(
-      const description = $("body div#iframeContent[dir='auto'] > div > p")
-        .children()
-        .text();
+      const description = $("div#bookDescription_feature_div > noscript").text()
 
       // Product Dimensions & Weight
       const product_dimensions = [];
       const shipping_weight = [];
-      $("#productDetailsTable > tbody > tr > td > div > ul").each(function(
+      $("#productDetailsTable > tbody > tr > td > div > ul").each(function (
         i,
         element
       ) {
@@ -80,7 +78,7 @@ const getBookDetails = async links => {
       };
 
       const fs = require("fs");
-      fs.appendFile("books.txt", util.inspect(bookDetail), function(err) {
+      fs.appendFile("books.txt", util.inspect(bookDetail), function (err) {
         if (err) {
           console.error(err);
         } else {
@@ -105,7 +103,7 @@ const goToBooks = async title => {
     const $ = cheerio.load(response.data);
 
     const links = [];
-    $("ol#zg-ordered-list li").each(function(i, element) {
+    $("ol#zg-ordered-list li").each(function (i, element) {
       if (i < 11) {
         const el = $(element);
         const link = el.find("a.a-link-normal").attr("href");
